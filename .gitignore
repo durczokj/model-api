@@ -9,3 +9,6 @@
 
 # Notebook folder
 *.DS_Store
+
+# Notebook folder
+commands.txt
