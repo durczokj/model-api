@@ -1,2 +1,0 @@
-docker build -t durczokj/iris-model-api:0.0.12.RELEASE .
-docker container run -d -p 3000:3000 durczokj/iris-model-api:0.0.12.RELEASE
