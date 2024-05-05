@@ -1,0 +1,2 @@
+MODEL_FILE_NAME: "model.pickle"
+EXPECTED_FEATURES: ["sepal_length", "petal_length"]

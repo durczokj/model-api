@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  iris-model-api:
+    image: durczokj/iris-model-api:0.0.12.RELEASE
+    ports:
+      - "3000:3000"
