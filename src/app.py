@@ -1,13 +1,15 @@
-import os, sys
 from flask import Flask, request, jsonify
 from predict import predict
-from get_index import get_index
+from get_config import get_config
+
+config = get_config()
 
 app = Flask(__name__)
 
 @app.route("/")
-def index():
-    return jsonify(get_index())
+def get_index():
+    return {"prediction_route": "/predict",
+            "expected_features": config["EXPECTED_FEATURES"]}
 
 @app.route('/predict', methods=['GET'])
 def predict_from_request():
@@ -19,4 +21,4 @@ def predict_from_request():
     return jsonify(result)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int("3000"), debug=True)
+    app.run(host="0.0.0.0", port=int("3000"), debug=False)
