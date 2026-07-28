@@ -3,13 +3,6 @@ kind: Deployment
 metadata:
   name: model-api
   namespace: dev
-resources:
-  requests:
-    cpu: 50m
-    memory: 128Mi
-  limits:
-    cpu: 500m
-    memory: 256Mi
 spec:
   replicas: 1
   selector:
@@ -41,3 +34,10 @@ spec:
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
