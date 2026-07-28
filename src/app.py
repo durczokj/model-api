@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def get_index():
     return {"prediction_route": "/predict",
+            "health_route": "/health",
             "expected_features": config["EXPECTED_FEATURES"]}
 
 @app.route("/health")
