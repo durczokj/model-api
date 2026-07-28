@@ -11,6 +11,10 @@ def get_index():
     return {"prediction_route": "/predict",
             "expected_features": config["EXPECTED_FEATURES"]}
 
+@app.route("/health")
+def health():
+    return {"status": "ok"}, 200
+
 @app.route('/predict', methods=['GET'])
 def predict_from_request():
     try:
