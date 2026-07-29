@@ -6,7 +6,6 @@ config = get_config()
 
 class ExpectedFeaturesNotProvidedError(Exception):
     def __init__(self, missing_features):
-        missing_features = ', '.join(missing_features)
         message = f"Feature(s) expected but missing: {missing_features}"
         super().__init__(message)
 
@@ -28,9 +27,6 @@ class _Predictor:
                 features[feature] = value
         
         missing_features = [feature for feature in self.expected_features if feature not in features.keys()]
-        print(self.expected_features)
-        print(features.values())
-        print(missing_features)
         if len(missing_features) > 0:
             raise ExpectedFeaturesNotProvidedError(missing_features)
         
@@ -42,7 +38,6 @@ class _Predictor:
     
     def predict(self, request):
         features = self.__get_features(request)
-        prediction = self.__get_prediction(features)
         return self.__get_prediction(features)
 
 
